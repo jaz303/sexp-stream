@@ -1,13 +1,22 @@
 var tokenize = require('sexp-tokenizer');
 
+module.exports = Parser;
+
 var S_OUT       = 1,
     S_IN_MAIN   = 2,
     S_IN_EXP    = 3,
     S_END       = 4;
 
 function Parser(options) {
+
+    if (!(this instanceof Parser)) return new Parser();
+
+    options = options || {};
+    options.objectMode = true;
+
     Transform.call(this, options);
     this._state = S_OUT;
+
 }
 
 var Transform   = require('stream').Transform,
@@ -15,7 +24,7 @@ var Transform   = require('stream').Transform,
 
 util.inherits(Parser, Transform);
 
-Parser.prototype._transform = function(chunk, encoding, done) {
+Parser.prototype._transform = function(obj, encoding, done) {
 
     if (this._state === S_OUT) {
 
