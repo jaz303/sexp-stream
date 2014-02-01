@@ -1,6 +1,6 @@
 {
   "name": "sexp-stream",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Streaming s-expression parser",
   "main": "index.js",
   "scripts": {
