@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jaz303/sexp-stream/issues"
   },
-  "homepage": "https://github.com/jaz303/sexp-stream"
+  "homepage": "https://github.com/jaz303/sexp-stream",
+  "dependencies": {
+    "sexp-tokenizer": "~0.1.0"
+  }
 }
