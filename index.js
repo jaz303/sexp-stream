@@ -5,11 +5,15 @@ var S_OUT       = 1,
     S_IN_EXP    = 3,
     S_END       = 4;
 
-module.exports = sexp;
-
-function Parser() {
+function Parser(options) {
+    Transform.call(this, options);
     this._state = S_OUT;
 }
+
+var Transform   = require('stream').Transform,
+    util        = require('util');
+
+util.inherits(Parser, Transform);
 
 Parser.prototype._transform = function(chunk, encoding, done) {
 
