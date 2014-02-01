@@ -1,7 +1,7 @@
 {
   "name": "sexp-stream",
   "version": "0.0.1",
-  "description": "Stream s-expression parser",
+  "description": "Streaming s-expression parser",
   "main": "index.js",
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
