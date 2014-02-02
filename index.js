@@ -65,6 +65,11 @@ Parser.prototype._transform = function(obj, encoding, done) {
             this._curr.push(obj);
         }
 
+    } else if (this._state === S_END) {
+
+        this.emit('error', new Error('unexpected token encountered after final closing paren'));
+        return;
+
     }
 
     done();
